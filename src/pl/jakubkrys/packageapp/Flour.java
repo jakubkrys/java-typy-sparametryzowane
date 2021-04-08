@@ -9,4 +9,12 @@ public class Flour {
         this.name = name;
         this.weight = weight;
     }
+
+    @Override
+    public String toString() {
+        return "Flour{" +
+                "name='" + name + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }

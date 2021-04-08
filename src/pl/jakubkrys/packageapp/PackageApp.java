@@ -7,18 +7,19 @@ public class PackageApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
-
+        Package <Shoes> shoesPackage = null;
+        Package <Flour> flourPackage = null;
 
         int option;
-        do{
+        do {
             System.out.println("----- Package App -----");
             System.out.println("1 - send package");
             System.out.println("2 - pick up package");
             option = scanner.nextInt();
             scanner.nextLine();
+            displaySubMenu();
             switch (option){
                 case 1:
-                    displaySubMenu();
                     option = scanner.nextInt();
                     scanner.nextLine();
                     switch (option){
@@ -30,23 +31,33 @@ public class PackageApp {
                             scanner.nextLine();
 
                             Shoes shoes = new Shoes (brand,size);
-                            ShoesPackage shoesPackage = new ShoesPackage(shoes);
+                            shoesPackage = new Package <> (shoes);
                             shoesPackage.send();
                             break;
                         case 2:
                             System.out.print("Name: ");
                             String name = scanner.nextLine();
                             System.out.print("Weight: ");
-                            int weight = scanner.nextInt();
+                            double weight = scanner.nextDouble();
                             scanner.nextLine();
 
                             Flour flour = new Flour (name,weight);
-                            FlourPackage flourPackage = new FlourPackage(flour);
+                            flourPackage = new Package <> (flour);
                             flourPackage.send();
                             break;
                     }
                     break;
                 case 2:
+                    option = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (option){
+                        case 1:
+                            shoesPackage.pickUp();
+                            break;
+                        case 2:
+                            flourPackage.pickUp();
+                            break;
+                    }
                     break;
             }
         } while (option != 0);
