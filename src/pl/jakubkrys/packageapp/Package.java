@@ -1,6 +1,6 @@
 package pl.jakubkrys.packageapp;
 
-public class Package <V> {
+public class Package <V> implements Operations<V> {
     private V value;
 
     public Package(V value) {
@@ -11,14 +11,18 @@ public class Package <V> {
         return value;
     }
 
-    public void send(){
+    @Override
+    public boolean send(){
         System.out.println("Send package");
         System.out.println(value);
+        return true;
     }
 
-    public void pickUp(){
+    @Override
+    public V pickUp(){
         System.out.println("Pick up package");
         System.out.println(value);
+        return value;
     }
 
     @Override

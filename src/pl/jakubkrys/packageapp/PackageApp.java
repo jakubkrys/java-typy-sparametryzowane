@@ -9,6 +9,7 @@ public class PackageApp {
         Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
         Package <Shoes> shoesPackage = null;
         Package <Flour> flourPackage = null;
+        boolean sended;
 
         int option;
         do {
@@ -32,7 +33,7 @@ public class PackageApp {
 
                             Shoes shoes = new Shoes (brand,size);
                             shoesPackage = new Package <> (shoes);
-                            shoesPackage.send();
+                            sended = shoesPackage.send();
                             break;
                         case 2:
                             System.out.print("Name: ");
@@ -43,7 +44,7 @@ public class PackageApp {
 
                             Flour flour = new Flour (name,weight);
                             flourPackage = new Package <> (flour);
-                            flourPackage.send();
+                            sended = flourPackage.send();
                             break;
                     }
                     break;
@@ -52,10 +53,10 @@ public class PackageApp {
                     scanner.nextLine();
                     switch (option){
                         case 1:
-                            shoesPackage.pickUp();
+                            Shoes shoes = shoesPackage.pickUp();
                             break;
                         case 2:
-                            flourPackage.pickUp();
+                            Flour flour = flourPackage.pickUp();
                             break;
                     }
                     break;
