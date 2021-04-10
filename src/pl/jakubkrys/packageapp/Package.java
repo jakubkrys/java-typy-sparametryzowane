@@ -1,6 +1,6 @@
 package pl.jakubkrys.packageapp;
 
-public class Package <V> implements Operations<V> {
+public class Package <V extends Product> implements Operations<V> {
     private V value;
 
     public Package(V value) {
