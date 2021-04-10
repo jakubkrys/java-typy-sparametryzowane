@@ -1,6 +1,6 @@
 package pl.jakubkrys.peopleregister;
 
-public class Person <T, C> {
+public class Person <T extends Number, C> {
 
     private String name;
     private String surname;
