@@ -3,6 +3,8 @@ package pl.jakubkrys.peopleregister;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
+// Zadanie z interfejsem Comparable nierozwiązywalne na obecnym etapie - Szymon przygotuje inne
+
 public class RegisterApp {
     public static void main(String[] args) {
 
